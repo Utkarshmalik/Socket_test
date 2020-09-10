@@ -2,6 +2,8 @@ const express=require("express");
 const app=express();
 const socketIo=require("socket.io");
 const http=require("http");
+const path=require("path");
+
 app.use(express.static(path.join(__dirname,'./public')))
 const cors=require("cors");
 
@@ -31,8 +33,10 @@ io.on("connection",(socket)=>
 
 })
 
+const port = process.env.PORT || 3000
 
-server.listen(process.env.PORT || 3000,()=>
+
+server.listen(port,()=>
 {
     console.log("App is running");    
 })
