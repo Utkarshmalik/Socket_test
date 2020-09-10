@@ -2,7 +2,7 @@ const express=require("express");
 const app=express();
 const socketIo=require("socket.io");
 const http=require("http");
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname+'./public')))
 const cors=require("cors");
 
 app.use(cors());
